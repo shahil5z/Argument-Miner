@@ -2,8 +2,13 @@
 
 - Argument Miner is a Flask web app for uploading text-based PDF documents, extracting key arguments using the Grok API, and downloading outputs as .txt or .doc files. It features a clean, light-themed interface.
 
-## Sample Image
+## Sample Image 1
 ![image alt](https://github.com/shahil5z/Argument-Miner/blob/9e71bbcfa516fc702229ebc8c7b66acb50a06930/SAMPLE_1.png)
+
+## Sample Image 2
+![image alt](https://github.com/shahil5z/Argument-Miner/blob/6be6de3c6bf2698f30ad52a044514dcad9cb298a/SAMPLE_2.png)
+
+
 
 ## Features
 
