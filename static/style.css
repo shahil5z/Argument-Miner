@@ -1,0 +1,77 @@
+/* Custom styles for Argument Miner */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f3f4f6; /* Light gray background */
+    color: #1f2937; /* Dark gray text */
+}
+
+/* File input styling */
+input[type="file"] {
+    color: #1f2937 !important;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #2563eb;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Hover effects for buttons */
+button, a.bg-blue-600 {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover, a.bg-blue-600:hover {
+    transform: translateY(-1px);
+}
+
+/* File list item hover effect */
+li.bg-gray-50:hover {
+    background-color: #e5e7eb !important;
+}
+
+/* Progress bar */
+#progress-bar {
+    transition: width 0.3s ease;
+}
+
+/* Ensure high contrast for all text */
+h1,
+p,
+label,
+span,
+a,
+select,
+option,
+input,
+#message,
+#progress-text,
+#no-files,
+#file_format_label {
+    color: #1f2937 !important;
+}
+
+select {
+    background-color: #ffffff;
+    border-color: #d1d5db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

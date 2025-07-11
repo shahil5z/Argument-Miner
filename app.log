@@ -1,0 +1,26 @@
+2025-07-11 22:32:43,618 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-11 22:32:43,618 INFO: [33mPress CTRL+C to quit[0m
+2025-07-11 22:32:43,625 INFO:  * Restarting with watchdog (windowsapi)
+2025-07-11 22:32:44,571 WARNING:  * Debugger is active!
+2025-07-11 22:32:44,576 INFO:  * Debugger PIN: 272-514-297
+2025-07-11 22:32:56,540 INFO: 127.0.0.1 - - [11/Jul/2025 22:32:56] "GET / HTTP/1.1" 200 -
+2025-07-11 22:32:56,580 INFO: 127.0.0.1 - - [11/Jul/2025 22:32:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-11 22:33:10,706 INFO: Listed 0 files in C:\Users\SHAHIL\Downloads\PROJECT\Argument Miner\saved.arg
+2025-07-11 22:33:10,708 INFO: 127.0.0.1 - - [11/Jul/2025 22:33:10] "GET /files HTTP/1.1" 200 -
+2025-07-11 22:33:10,723 INFO: 127.0.0.1 - - [11/Jul/2025 22:33:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-11 22:33:11,423 INFO: 127.0.0.1 - - [11/Jul/2025 22:33:11] "GET / HTTP/1.1" 200 -
+2025-07-11 22:33:11,439 INFO: 127.0.0.1 - - [11/Jul/2025 22:33:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-11 22:34:01,042 INFO: Listed 0 files in C:\Users\SHAHIL\Downloads\PROJECT\Argument Miner\saved.arg
+2025-07-11 22:34:01,043 INFO: 127.0.0.1 - - [11/Jul/2025 22:34:01] "GET /files HTTP/1.1" 200 -
+2025-07-11 22:34:01,064 INFO: 127.0.0.1 - - [11/Jul/2025 22:34:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-11 22:34:22,795 INFO: 127.0.0.1 - - [11/Jul/2025 22:34:22] "GET / HTTP/1.1" 200 -
+2025-07-11 22:34:22,813 INFO: 127.0.0.1 - - [11/Jul/2025 22:34:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-11 22:50:49,564 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-11 22:50:49,564 INFO: [33mPress CTRL+C to quit[0m
+2025-07-11 22:50:49,571 INFO:  * Restarting with watchdog (windowsapi)
+2025-07-11 22:50:50,527 WARNING:  * Debugger is active!
+2025-07-11 22:50:50,532 INFO:  * Debugger PIN: 272-514-297
+2025-07-11 22:50:59,952 INFO: 127.0.0.1 - - [11/Jul/2025 22:50:59] "GET / HTTP/1.1" 200 -
+2025-07-11 22:50:59,996 INFO: 127.0.0.1 - - [11/Jul/2025 22:50:59] "GET /static/style.css HTTP/1.1" 200 -

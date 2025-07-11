@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argument Miner</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="min-h-screen bg-gray-100">
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800">Argument Miner</h1>
+            <p class="text-gray-600 mt-2">Extract key arguments and insights from your documents</p>
+        </header>
+
+        <!-- Upload Form -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <form id="upload-form" enctype="multipart/form-data" class="space-y-4">
+                <div>
+                    <input type="file" name="file" accept=".png,.pdf" required class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
+                </div>
+                <div>
+                    <label id="file_format_label" for="file_format" class="block text-sm font-medium text-gray-700">Output Format</label>
+                    <select name="file_format" id="file_format" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800">
+                        <option value="txt">Text (.txt)</option>
+                        <option value="doc">Word (.doc)</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">Upload Document</button>
+            </form>
+            <div id="progress" class="hidden mt-4">
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+                <p id="progress-text" class="text-sm text-gray-600 mt-2"></p>
+            </div>
+            <p id="message" class="mt-4 text-center text-sm text-gray-600"></p>
+        </div>
+
+        <!-- View Files Link -->
+        <div class="mt-6 text-center">
+            <a href="/files" class="text-blue-600 hover:underline">View Extracted Files</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('upload-form');
+        const progress = document.getElementById('progress');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            message.textContent = '';
+            progress.classList.remove('hidden');
+            progressBar.style.width = '0%';
+            progressText.textContent = 'Uploading...';
+
+            const formData = new FormData(form);
+            try {
+                // Simulate progress
+                let progressValue = 0;
+                const progressInterval = setInterval(() => {
+                    progressValue += 20;
+                    progressBar.style.width = `${progressValue}%`;
+                    if (progressValue >= 80) clearInterval(progressInterval);
+                }, 200);
+
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                clearInterval(progressInterval);
+                progressBar.style.width = '100%';
+                progressText.textContent = 'Processing...';
+
+                const result = await response.json();
+                progress.classList.add('hidden');
+                message.textContent = result.message || result.error;
+                message.classList.toggle('text-red-500', result.error);
+                message.classList.toggle('text-green-500', !result.error);
+            } catch (error) {
+                progress.classList.add('hidden');
+                message.textContent = 'An error occurred during upload';
+                message.classList.add('text-red-500');
+            }
+        });
+    </script>
+</body>
+</html>
